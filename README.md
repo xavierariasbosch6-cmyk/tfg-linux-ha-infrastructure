@@ -35,6 +35,12 @@ These are private, local-lab addresses; the service is **not** publicly hosted.
 - **Observability:** Prometheus, Node Exporter, Grafana
 - **Automation:** Bash, cron, status logs
 
+## Project continuation: 0 EUR cloud budget
+
+**Current budget requirement: 0 EUR for cloud.** [Zero-cost architecture and eligibility rules](docs/CLOUD_0_EUR.md).
+
+**Next practical step:** [Recover the authentic original files from the three VMware Ubuntu servers](docs/RECUPERAR_TFG.md). The helper script [export_original_tfg.sh](scripts/export_original_tfg.sh) writes a **private local archive**, never uploads to GitHub and requires credential review before source is published.
+
 ## Extension roadmap
 
 See [Engineering roadmap](docs/ROADMAP.md) for the proposed local HA/Keepalived, Ansible, Terraform, cloud and CI/CD phases. These are **planned extensions**, not part of the completed original TFG.
