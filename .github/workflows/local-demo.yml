@@ -1,0 +1,42 @@
+name: Local HAProxy + Nginx demo tests
+
+on:
+  push:
+    paths:
+      - "deploy/local/**"
+      - "scripts/test_local.sh"
+      - ".github/workflows/local-demo.yml"
+  pull_request:
+    paths:
+      - "deploy/local/**"
+      - "scripts/test_local.sh"
+      - ".github/workflows/local-demo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compose-integration:
+    name: Backend failure and recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Compose file
+        run: docker compose -f deploy/local/compose.yaml config --quiet
+
+      - name: Start demo containers
+        run: docker compose -f deploy/local/compose.yaml up -d --wait --wait-timeout 90
+
+      - name: Verify balancing and backend recovery
+        run: bash scripts/test_local.sh
+
+      - name: Print logs on failure
+        if: failure()
+        run: docker compose -f deploy/local/compose.yaml logs --no-color
+
+      - name: Clean up test containers
+        if: always()
+        run: docker compose -f deploy/local/compose.yaml down --remove-orphans
