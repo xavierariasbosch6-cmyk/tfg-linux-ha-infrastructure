@@ -30,7 +30,7 @@ Clean up when finished:
 docker compose -f deploy/local/compose.yaml down --remove-orphans
 ```
 
-See the [complete demo and test instructions](docs/DEMO_LOCAL.md) and [implementation sources](deploy/local/). **This milestone validates backend availability only; HAProxy and the local host still remain single points of failure.**
+See [real test results from the Ubuntu Node2 VM](docs/TEST_RESULTS.md), plus the [complete demo and test instructions](docs/DEMO_LOCAL.md) and [implementation sources](deploy/local/). **This milestone validates backend availability only; HAProxy and the local host still remain single points of failure.**
 
 ## Architecture
 
