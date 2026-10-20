@@ -6,6 +6,32 @@ A hands-on Linux infrastructure lab built with three Ubuntu Server virtual machi
 
 > **Project status:** The original laboratory implementation was completed and validated in June 2026. **Repository publication is in progress:** the original configuration files, scripts, screenshots, and final report have not yet been imported here. This README documents the implemented project, but the current repository is not yet a reproducible deployment.
 
+## Quickstart: new reproducible Docker Compose demo (2026 extension)
+
+**Status:** implemented in source; automated verification is running in [GitHub Actions](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions). This is a **new demonstration**, not an export of the historical three-VM setup.
+
+Clone the repository on a computer with Docker and Docker Compose V2:
+
+```bash
+git clone https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure.git
+cd tfg-linux-ha-infrastructure
+docker compose -f deploy/local/compose.yaml up -d --wait
+```
+
+Open **http://127.0.0.1:8080** on that same computer. HAProxy routes requests to two Nginx containers. To test removal and recovery of a backend (requires Bash and curl):
+
+```bash
+bash scripts/test_local.sh
+```
+
+Clean up when finished:
+
+```bash
+docker compose -f deploy/local/compose.yaml down --remove-orphans
+```
+
+See the [complete demo and test instructions](docs/DEMO_LOCAL.md) and [implementation sources](deploy/local/). **This milestone validates backend availability only; HAProxy and the local host still remain single points of failure.**
+
 ## Architecture
 
 ```mermaid
