@@ -1,5 +1,7 @@
 # Engineering roadmap — Linux HA Infrastructure
 
+> **Cloud-cost restriction adopted 20 October 2026:** **0 EUR.** No paid resources, no credit-dependent AWS deployments and no automatic paid-plan upgrades. Optional deployment may use **Oracle Cloud Always Free only after eligibility and quotas are verified**. See [strict zero-cost policy](CLOUD_0_EUR.md). The AWS infrastructure architecture below is a **deferred educational design**, not an authorized deployment.
+
 > **Status: PLANNED.** This document describes the evolution of the June 2026 UOC Final Degree Project. It is a plan, not evidence of implementation. See [README](../README.md) for the validated original lab. Do not interpret the targets or commands below as currently available features.
 
 ## Outcome
