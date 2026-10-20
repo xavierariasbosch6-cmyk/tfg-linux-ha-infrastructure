@@ -35,6 +35,10 @@ These are private, local-lab addresses; the service is **not** publicly hosted.
 - **Observability:** Prometheus, Node Exporter, Grafana
 - **Automation:** Bash, cron, status logs
 
+## Extension roadmap
+
+See [Engineering roadmap](docs/ROADMAP.md) for the proposed local HA/Keepalived, Ansible, Terraform, cloud and CI/CD phases. These are **planned extensions**, not part of the completed original TFG.
+
 ## Implemented work
 
 1. Created three Ubuntu Server VMs with defined network roles and static IP addressing.
