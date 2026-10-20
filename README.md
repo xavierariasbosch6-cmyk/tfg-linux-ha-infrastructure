@@ -8,7 +8,7 @@ A hands-on Linux infrastructure lab built with three Ubuntu Server virtual machi
 
 ## Quickstart: new reproducible Docker Compose demo (2026 extension)
 
-**Status:** implemented in source; automated verification is running in [GitHub Actions](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions). This is a **new demonstration**, not an export of the historical three-VM setup.
+**Status:** Docker Compose deployment and integration smoke test **verified successfully** in [GitHub Actions run #1](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions/runs/39478467333) on 20 October 2026. This is a **new demonstration**, not an export of the historical three-VM setup.
 
 Clone the repository on a computer with Docker and Docker Compose V2:
 
