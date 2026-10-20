@@ -1,6 +1,6 @@
 # Demo reproducible — HAProxy + 2 Nginx (local, 0 EUR cloud)
 
-**Estado:** codigo publicado; aun no validado mediante ejecucion real de Docker. Esta implementacion nueva es distinta de las tres VM originales del TFG.
+**Estado:** validado en [GitHub Actions run #1](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions/runs/39478467333), 20 de octubre de 2026. Docker Compose inicio los tres contenedores, las pruebas comprobaron ambos backends, la caida de node1 y su reincorporacion. Esta implementacion nueva es distinta de las tres VM originales del TFG.
 
 ## Requisitos
 
@@ -77,7 +77,7 @@ Estos comandos se aplican solo al proyecto Compose tfg-linux-ha-demo; no apagan 
 
 ## Validacion automatizada
 
-El workflow de GitHub Actions local-demo.yml intenta validar Compose e iniciar los contenedores para ejecutar la misma prueba de integracion. Hasta observar un resultado verde en Actions no afirmaremos que ha superado la prueba real.
+El workflow de GitHub Actions local-demo.yml intenta validar Compose e iniciar los contenedores para ejecutar la misma prueba de integracion. La primera ejecucion ha terminado con resultado **success**: [evidencia automatica](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions/runs/39478467333). Esto valida el laboratorio Docker en el runner de GitHub, no el entorno VMware ni los futuros despliegues cloud.
 
 ## Lo que demuestra
 
