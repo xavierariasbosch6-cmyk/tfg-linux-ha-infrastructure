@@ -37,7 +37,7 @@ copy_original() {
 }
 
 for file in /etc/netplan/*.yaml /etc/netplan/*.yml; do
-  [[ -f "$file" ]] && copy_original "$file"
+  if [[ -f "$file" ]]; then copy_original "$file"; fi
 done
 
 if [[ "$role" == lb ]]; then
@@ -45,7 +45,7 @@ if [[ "$role" == lb ]]; then
 else
   copy_original /etc/nginx/nginx.conf
   for file in /etc/nginx/sites-available/* /etc/nginx/conf.d/*.conf; do
-    [[ -f "$file" ]] && copy_original "$file"
+    if [[ -f "$file" ]]; then copy_original "$file"; fi
   done
 fi
 
@@ -68,7 +68,7 @@ fi
 
 # Only locate (do not copy) possible original Compose, monitoring and Bash files.
 find "$HOME" -maxdepth 6 \
-  \( -name .ssh -o -name .cache -o -name .git -o -name .local -o -name node_modules -o -name 'tfg-private-*' \) -prune -o \
+  \( -name .ssh -o -name .cache -o -name .git -o -name .local -o -name node_modules -o -name 'tfg-private-*' -o -name tfg-linux-ha-infrastructure \) -prune -o \
   -type f \( -iname 'docker-compose.yml' -o -iname 'docker-compose.yaml' -o -iname 'compose.yml' \
     -o -iname 'compose.yaml' -o -iname 'prometheus.yml' -o -iname 'prometheus.yaml' \
     -o -name '*.sh' \) -print \
