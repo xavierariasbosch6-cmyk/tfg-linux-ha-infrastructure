@@ -2,7 +2,7 @@
 
 > **Cloud-cost restriction adopted 20 October 2026:** **0 EUR.** No paid resources, no credit-dependent AWS deployments and no automatic paid-plan upgrades. Optional deployment may use **Oracle Cloud Always Free only after eligibility and quotas are verified**. See [strict zero-cost policy](CLOUD_0_EUR.md). The AWS infrastructure architecture below is a **deferred educational design**, not an authorized deployment.
 
-> **Status: PLANNED.** This document describes the evolution of the June 2026 UOC Final Degree Project. It is a plan, not evidence of implementation. See [README](../README.md) for the validated original lab. Do not interpret the targets or commands below as currently available features.
+> **Status: IN PROGRESS.** Milestone 1's Compose deployment and smoke tests passed in GitHub Actions on 20 October 2026. This document describes the evolution of the June 2026 UOC Final Degree Project. It is a plan, not evidence of implementation. See [README](../README.md) for the validated original lab. Do not interpret the targets or commands below as currently available features.
 
 ## Outcome
 
@@ -28,7 +28,9 @@ Turn the completed three-VM academic lab into a **reproducible, observable, faul
 
 Collect and review original HAProxy/Nginx/Netplan files, Docker/Compose definitions, Prometheus configuration, Bash scripts, cron configuration, screenshots and the final project report. Redact credentials, private keys, tokens, host-specific secrets, and unnecessary personal data before publication. Never fabricate historical source artifacts.
 
-## Milestone 1 — Reproducible local demo (PLANNED)
+## Milestone 1 — Reproducible local demo (IMPLEMENTED AND CI VERIFIED)
+
+**Evidence (20 October 2026):** [GitHub Actions run #1](https://github.com/xavierariasbosch6-cmyk/tfg-linux-ha-infrastructure/actions/runs/39478467333) completed successfully. Docker Compose configuration validation, container startup, round-robin across both backends, backend stop/recovery tests and cleanup all passed. This does **not** prove load-balancer redundancy, multi-host HA, or cloud deployment.
 
 **Goal:** Clone the repository on a clean Linux/Docker machine and run a small representative stack without access to VMware.
 
