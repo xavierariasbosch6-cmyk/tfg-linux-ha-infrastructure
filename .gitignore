@@ -1,14 +1,37 @@
+# Private VM exports, binaries and local logs
 *.tar
 *.tar.*
-*.jar
-*.exe
-*.msi
-*.deb
-*.zip
 *.tgz
+*.zip
 *.log
 *.log.*
-*.sig
+tfg-private-*/
+tfg-private-*.tar.gz
+artifacts/raw/
+exports/private/
 
-pkg/
-src/
+# Secrets and credentials (never commit real secrets)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+id_rsa
+id_ed25519
+*.tfvars
+!*.tfvars.example
+terraform.tfstate
+terraform.tfstate.*
+*.tfplan
+.terraform/
+
+# Local IDE/OS and Python files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.pyc
